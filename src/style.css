@@ -1,0 +1,142 @@
+body{
+    
+    min-height: 100vh;
+    overflow-x: hidden;
+}
+
+.vertical-nav{
+    min-width: 17rem;
+    width: 17rem;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    left: 0;
+    box-shadow: 3px 3px 10px rgba(0,0,0,0.1);
+    transition: all 0.4s;
+    z-index: 100;
+}
+
+.page-content{
+    width: calc(100% - 17rem);
+    margin-left: 17rem;
+    transition: all 0.4s;
+    z-index: 100;
+}
+
+#sidebar.active{
+    margin-left: -17rem;
+}
+
+#content.active{
+    width: 100%;
+    margin: 0;
+}
+
+.separator{
+    margin: 3rem 0;
+    border-bottom: 1px dashed #fff;
+}
+
+.text-uppercase{
+    letter-spacing: 0.1em;
+}
+
+.text-gray{
+    color: #aaa;
+}
+
+.nav-link{
+    text-transform: capitalize;
+}
+
+.nav-link:hover{
+    background: #dcdbdb !important; 
+}
+
+.text-primary{
+    color: #7579e7 !important;
+}
+
+.col-shadow{
+    padding: 10px;
+    border-radius: 5px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.1), 0 6px 20px 0 rgba(0, 0, 0, 0.1);
+}
+
+.header-col{
+    background: #7579e7;
+    height: 60px;
+}
+
+.mt-60{
+    margin-top: 60px;
+}
+
+.custom-height-150{
+    height: 150px;
+}
+
+.scroll-row{
+    overflow-x: auto !important;
+    white-space: nowrap;
+}
+
+.scroll-row > .col-4{
+    width: 150px !important;
+    display: inline-block !important;
+    float: none;
+    
+}
+
+div{
+    word-wrap: break-word;
+}
+.bg-blur{
+    -webkit-filter: blur(5px);
+    -moz-filter: blur(5px);
+    -o-filter: blur(5px);
+    -ms-filter: blur(5px);
+    filter: blur(5px);
+    visibility: hidden;
+}
+
+th,td{
+    background-color: white !important;
+}
+
+.open-alert{
+    visibility: visible !important;
+}
+.custom-alert a{
+    float: right;
+    display: block;
+    margin: 5px;
+    
+}
+
+.image-size{
+    width: 150px;
+}
+
+.h-1{
+    height: 10%;
+}
+@media (max-width: 768px){
+    #sidebar{
+        margin-left: -17rem;
+    }
+
+    #sidebar.active{
+        margin-left: 0;
+    }
+
+    #content {
+        width: 100%;
+        margin: 0;
+    }
+
+    #content.active{
+        margin-left: 17rem;
+        width: calc(100% -17rem);
+    }
+}
