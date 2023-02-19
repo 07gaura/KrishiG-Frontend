@@ -116,11 +116,42 @@ th,td{
 
 .image-size{
     width: 150px;
+    height: 150px;
 }
 
 .h-1{
     height: 10%;
 }
+
+.h-5{
+    height: 400px;
+}
+#main-div{
+    height: auto;
+    overflow: auto;
+}
+
+.square{
+    width: 20px;
+    height: 20px;
+    font-size: 80%;
+}
+.cart-block{
+    background-color: #f5f5f5;
+    border-radius: 5px;
+}
+.resizedTextbox {
+    width: 40px; 
+    border-radius: 0px;
+    
+}
+
+.icon-font-size{
+    font-size: 100px;
+    text-align: center;
+    
+}
+
 @media (max-width: 768px){
     #sidebar{
         margin-left: -17rem;

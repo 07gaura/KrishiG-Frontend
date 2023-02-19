@@ -1,4 +1,5 @@
 import React from 'react'
+import { Outlet, Link } from "react-router-dom";
 
 function Navbar() {
     function sidebarClick(event){
@@ -25,44 +26,25 @@ function Navbar() {
         <p class="text-gray font-weight-bold text-uppercase px-3 small pb-4 mb-0">Dashboard</p>
         <ul class="nav flex-column bg-white mb-0">
             <li class="nav-item">
-                <a href="/home" class="nav-link text-dark bg-light">
+                <Link to="/" class="nav-link text-dark bg-light">
                     <i class="fa-solid fa-house-user  mr-3 text-primary fa-fw"></i>
                     Home
-                </a>
+                </Link>
             </li>
             <li class="nav-item">
-                <a href="/driverList" class="nav-link text-dark bg-light">
-                    <i class="fa-solid fa-user mr-3 text-primary fa-fw"></i>
-                    Driver
+                <a href="#" class="nav-link text-dark bg-light">
+                <i class="fa-solid fa-user mr-3 text-primary fa-fw"></i>
+                    Profile
                 </a>
             </li>
             
             <li class="nav-item">
-                <a href="/truckList" class="nav-link text-dark bg-light">
-                    <i class="fa-solid fa-truck-front text-primary fa-fw"></i>
-                    Trucks
+                <a href="#" class="nav-link text-dark bg-light">
+                <i class="fa-sharp fa-solid fa-mars-double mr-3 text-primary fa-fw"></i>
+                    Category
                 </a>
             </li>
             
-            <li class="nav-item">
-                <a href="/loadingList" class="nav-link text-dark bg-light">
-                    <i class="fa-solid fa-truck mr-3 text-primary fa-fw"></i>
-                    loading
-                </a>
-            </li>
-            
-            <li class="nav-item">
-                <a href="/maintenanceList" class="nav-link text-dark bg-light">
-                    <i class="fa-solid fa-screwdriver-wrench text-primary fa-fw"></i>
-                    Maintenance
-                </a>
-            </li>
-            <li class="nav-item">
-                <a href="/reports" class="nav-link text-dark bg-light">
-                    <i class="fa-solid fa-file text-primary fa-fw"></i>
-                    reports
-                </a>
-            </li>
         </ul>
 	</div>
     

@@ -3,10 +3,11 @@ import Search from './Search'
 import Slider from './Slider'
 import Category from './Category'
 import Product from './Product'
+import configData from '../../config.json'
 
-function Mainpage() {
+function Mainpage({get_cart_count_value}) {
 
-    const [categoryId, SetCategoryId] = useState(1)
+    //var [categoryId, SetCategoryId] = useState(1)
     const [categoryList, SetCategoryList] = useState([])
     const [productList, SetProductList] = useState([])
 
@@ -15,45 +16,49 @@ function Mainpage() {
           method: 'GET',
           redirect: 'follow'
         };
-    
-        const data = await fetch("http://localhost:8089/product/category", requestOptions)
+        const url = "http://"+configData.spring_api+":"+configData.port+"/product/category"
+        const data = await fetch(url, requestOptions)
           .then(response => response.json())
           .catch(error => console.log('error', error));
           SetCategoryList(data);
-          SetCategoryId(data[0].id)
       }
     
-    const fetchProductByCategory = async()=>{
+    const fetchProductByCategory = async(categoryId)=>{
+      SetProductList([])
       var requestOptions = {
         method: 'GET',
         redirect: 'follow'
       };
-  
-      const data = await fetch("http://localhost:8089/product/category/"+categoryId, requestOptions)
+      const url = "http://"+configData.spring_api+":"+configData.port+"/product/category/"+categoryId
+      const data = await fetch(url, requestOptions)
         .then(response => response.json())
         .catch(error => console.log('error', error));
+        console.log(data)
         SetProductList(data)
-        
+        //console.log("running")
+        renderProducts()
     }
+
+    
 
     useEffect(()=>{
         fetchCategory()
-        fetchProductByCategory()
+        fetchProductByCategory(1)
     }, [])
 
     const renderCategoryName=() => (
       categoryList.map(name=>(
-        <Category  item={name} SetCategoryId = {SetCategoryId}/>
+        <Category  item={name} fetchProductByCategory={fetchProductByCategory}/>
       ))    
     )
     const renderProducts=() => (
+      //console.log(productList)
       productList.map(name=>(
-        //console.log(name)
-        <Product  item={name}/>
+        <Product  item={name} get_cart_count_value={get_cart_count_value} />
       ))
     )
   return (
-    <div>
+    <div className=''>
       <Search />
       <Slider />
       <div className='container'>
@@ -63,6 +68,9 @@ function Mainpage() {
         </div>
       </div>
       
+        <div className='scroll-row text-center'>
+          {renderProducts()}
+        </div>
         <div className='scroll-row text-center'>
           {renderProducts()}
         </div>
