@@ -12,6 +12,7 @@ import configData from './config.json'
 import Cart from './Component/CartPage/Cart';
 import Checkoutform  from './Component/CheckOut/Checkoutform';
 import Orderplaced from './Component/Orderplaced';
+import ProductDetails from './Component/MainPageComponent/ProductDetails';
 
 function App() {
   const [cart_count, Set_Cart_Count]= useState(0)
@@ -62,6 +63,7 @@ function App() {
           <Route path='signup' element={<Signup />} />
           <Route path='cart' element={<Cart get_cart_count_value={get_cart_count_value}/>} />
           <Route path='checkout' element={<Checkoutform />} />
+          <Route path='productdetails' element={<ProductDetails />}/>
           <Route path='order_placed' element={<Orderplaced get_cart_count_value={get_cart_count_value}/>} />
         </Route>
       </Routes>

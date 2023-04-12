@@ -22,7 +22,7 @@ function Header({cart_count}) {
         </div>
             </div>
             <div className='col-6 m-2 align-middle text-center'>
-                Krishi G
+                Krishi g
             </div>
             <div className='col-1 m-3 align-middle'>
                 <Link to="/cart">

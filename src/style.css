@@ -119,6 +119,24 @@ th,td{
     height: 150px;
 }
 
+.image-size-100{
+    width: 100%;
+    height: 400px;
+}
+.cut{
+    position: relative;
+}
+.cut::before{
+    content: "";
+    display: block;
+    height: 2px;
+    width: 50px;
+    position: absolute;
+    top: 50%;
+    left: 0;
+    background: red;
+}
+
 .h-1{
     height: 10%;
 }

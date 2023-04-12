@@ -1,0 +1,7 @@
+<?xml version='1.0' encoding='utf-8'?>
+<resources>
+    <string name="app_name">krishig</string>
+    <string name="title_activity_main">krishig</string>
+    <string name="package_name">com.krishig.app</string>
+    <string name="custom_url_scheme">com.krishig.app</string>
+</resources>
